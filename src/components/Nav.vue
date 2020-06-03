@@ -43,13 +43,13 @@
 
 <script lang="ts">
 import { Component, Watch, Vue } from "vue-property-decorator";
-import { NavListItem } from "@/types/index"; //设置导航数据模型
+import { NavListItem } from "../types/index"; //设置导航数据模型
 import { Route } from "vue-router";
 
 @Component({})
 export default class Nav extends Vue {
   private title: string = "首页";
-  private activeIndex: string = "0";
+  private activeIndex: string = "1";
   private list: Array<NavListItem> = [
     {
       index: "1",
@@ -146,21 +146,20 @@ export default class Nav extends Vue {
   }
 }
 .nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  width: 100%;
-  border-bottom: 1px solid #eee;
-  background-color: #fff;
   .nav-content {
     width: 1200px;
     margin: 0 auto;
+    a{
+      text-decoration: none;
+    }
   }
   .logo {
     height: 50px;
     margin: 0;
     margin-top: 5px;
+  }
+  .el-menu{
+    background-color: transparent;
   }
   .el-menu.el-menu--horizontal {
     border-bottom: none;
